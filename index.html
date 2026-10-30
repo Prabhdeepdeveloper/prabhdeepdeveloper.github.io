@@ -1,291 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prabhdeep Singh - Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PTECH SOLUTIONS provides website development, WordPress services, PHP upgrades, WHMCS configuration and technical support.">
+  <title>PTECH SOLUTIONS | Web Development & Technical Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #111;
-    }
-
-    header {
-      background: #1f2937;
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 10px;
-    }
-
-    section {
-      padding: 20px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: #111827;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .contact a {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      background: #e5e7eb;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-    }
-
-    .profile-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-    }
-
-    .profile-img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #ffffff;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-    }
-
-    @media (max-width: 600px) {
-      .profile-img {
-        width: 110px;
-        height: 110px;
-      }
+    :root { --ink:#172033; --muted:#64748b; --line:#e2e8f0; --surface:#f8fafc; --brand:#2457c5; --brand-dark:#173d91; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.65; }
+    a { color:var(--brand); text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    .topbar { background:#111c32; color:#fff; padding:13px 20px; font-size:14px; }
+    .topbar-inner, .container { width:min(1080px, calc(100% - 40px)); margin:0 auto; }
+    .topbar-inner { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    header { background:linear-gradient(135deg,#172b50,#244c91); color:#fff; padding:76px 20px 70px; }
+    .hero { width:min(900px,100%); margin:auto; text-align:center; }
+    .eyebrow { display:inline-block; padding:6px 13px; border:1px solid rgba(255,255,255,.3); border-radius:999px; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:18px 0 10px; font-size:clamp(36px,6vw,54px); line-height:1.12; letter-spacing:-.04em; }
+    .hero p { max-width:720px; margin:0 auto; color:#e2eaff; font-size:18px; }
+    .hero-note { margin-top:20px !important; font-size:14px !important; color:#cbd8f2 !important; }
+    main { padding:28px 0 60px; }
+    section { padding:34px 0; border-bottom:1px solid var(--line); }
+    h2 { margin:0 0 14px; font-size:25px; letter-spacing:-.025em; }
+    h3 { margin:0 0 8px; font-size:17px; }
+    p { margin:0 0 13px; }
+    .intro { color:#334155; max-width:850px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:20px; }
+    .service { border:1px solid var(--line); border-radius:14px; padding:20px; background:#fff; }
+    .service p { color:var(--muted); margin:0; font-size:14px; }
+    .taglist { display:flex; flex-wrap:wrap; gap:9px; margin-top:16px; }
+    .tag { background:#eef3ff; color:#24478e; border-radius:999px; padding:7px 12px; font-size:13px; font-weight:600; }
+    .process { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:20px; }
+    .step { background:var(--surface); border-radius:12px; padding:18px; }
+    .step strong { display:block; margin-bottom:5px; }
+    .step span { color:var(--muted); font-size:14px; }
+    .notice { background:#f8fafc; border:1px solid var(--line); border-radius:12px; padding:18px 20px; color:#475569; }
+    .contact { display:flex; flex-wrap:wrap; gap:12px 26px; margin-top:16px; }
+    footer { background:#111c32; color:#dbe5f5; text-align:center; padding:25px 20px; font-size:13px; }
+    footer p { margin:3px 0; }
+    @media(max-width:650px) {
+      .grid,.process { grid-template-columns:1fr; }
+      header { padding:58px 20px; }
+      .topbar-inner { justify-content:center; text-align:center; }
+      section { padding:27px 0; }
     }
   </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <span><strong>PTECH SOLUTIONS</strong> · Sole Proprietorship</span>
+      <span>Web Development & Technical Services</span>
+    </div>
+  </div>
 
   <header>
-    <div class="profile-wrapper">
-      <img src="images/78529255.jpeg" alt="Prabhdeep Singh" class="profile-img" />
-
-      <h1>Prabhdeep Singh</h1>
-
-      <p>
-        Full-Stack Developer & WHMCS Specialist<br>
-        Building scalable web platforms, WHMCS modules, and business-ready solutions
-      </p>
-
-      <p style="margin-top:10px; font-size:0.95rem; opacity:0.9;">
-        7+ Years Experience • Fiverr Level 2 Seller • Upwork Freelancer
-      </p>
+    <div class="hero">
+      <span class="eyebrow">PTECH SOLUTIONS</span>
+      <h1>Web Development & Technical Services</h1>
+      <p>Practical website development, platform configuration and technical support for businesses and individual clients.</p>
+      <p class="hero-note">Operated by Prabhdeep Singh · Serving clients through direct project engagements</p>
     </div>
   </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a freelance full-stack developer with over <strong>7 years of hands-on experience</strong>
-      building production-ready web applications, WHMCS modules, and automation tools.
-    </p>
-    <p>
-      I specialize in <strong>WHMCS development</strong>, <strong>custom PHP/Laravel solutions</strong>,
-      and <strong>WordPress platforms</strong> used by real businesses every day.
-      My focus is always on clean code, performance, security, and long-term maintainability.
-    </p>
-  </section>
+  <main class="container">
+    <section>
+      <h2>About PTECH SOLUTIONS</h2>
+      <p class="intro">PTECH SOLUTIONS is a sole proprietorship operated by Prabhdeep Singh. We provide web development and technical services to clients on a direct-project basis. Each project is discussed with the customer, scoped according to their requirements, quoted individually and delivered electronically.</p>
+      <p class="intro">Our work focuses on website setup and customization, WordPress services, PHP upgrades, WHMCS configuration and related technical support.</p>
+    </section>
 
-  <section>
-    <h2>Core Expertise</h2>
+    <section>
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="service">
+          <h3>Website Development & Customization</h3>
+          <p>Website setup, design adjustments, feature changes, page configuration and custom website functionality.</p>
+        </div>
+        <div class="service">
+          <h3>WordPress & WooCommerce</h3>
+          <p>WordPress installation, configuration, product setup, theme customization and website maintenance.</p>
+        </div>
+        <div class="service">
+          <h3>WHMCS Development & Configuration</h3>
+          <p>WHMCS installation, client-area customization, module configuration, integrations and workflow improvements.</p>
+        </div>
+        <div class="service">
+          <h3>PHP Upgrades & Technical Support</h3>
+          <p>PHP version upgrades, compatibility checks, troubleshooting, performance improvements and ongoing technical assistance.</p>
+        </div>
+      </div>
+    </section>
 
-    <ul>
-      <li>Full Stack Web Development (MERN, PHP, Laravel)</li>
-      <li>WHMCS Module Development & Custom Automation</li>
-      <li>E-Commerce Platforms & Integrations</li>
-      <li>API Development & Third-Party System Integration</li>
-      <li>Business Process Automation (CRM, Payments, Workflows)</li>
-      <li>Mobile App Development (Android & Cross-Platform)</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Technologies</h2>
+      <p class="intro">Depending on the requirements of each project, our work may use the following technologies and platforms:</p>
+      <div class="taglist">
+        <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">WHMCS</span>
+        <span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">JavaScript</span>
+        <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span><span class="tag">REST APIs</span>
+      </div>
+    </section>
 
-  <section>
-    <h2>Technologies & Frameworks</h2>
+    <section>
+      <h2>How We Work</h2>
+      <div class="process">
+        <div class="step"><strong>1. Project Discussion</strong><span>Customers contact us directly to explain their requirements and share project details.</span></div>
+        <div class="step"><strong>2. Scope & Payment</strong><span>We agree on the work and price with the customer, then issue an invoice for the project.</span></div>
+        <div class="step"><strong>3. Digital Delivery</strong><span>We complete the agreed work and deliver it electronically through the customer's website, hosting environment or online communication channel.</span></div>
+      </div>
+    </section>
 
-    <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:15px;">
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">PHP</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Laravel</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">WHMCS</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Node.js</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">React.js</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">MongoDB</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">WordPress</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">WooCommerce</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Shopify</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Magento</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Wix</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">GoHighLevel</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Zapier</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Zoho</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Flutter</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Java</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Kotlin</span>
-      <span style="background:#e5e7eb; padding:8px 12px; border-radius:9999px;">Swift</span>
-    </div>
-  </section>
+    <section>
+      <h2>How Customers Reach Us</h2>
+      <p class="intro">We work directly with customers and receive project enquiries through email and referrals. We do not maintain physical inventory or sell physical products. Our services are digital and are delivered remotely.</p>
+      <div class="notice">PTECH SOLUTIONS currently operates through direct customer engagements and does not maintain a dedicated public business storefront. Project requirements, quotations, invoices and delivery coordination are handled online.</div>
+    </section>
 
-  <section>
-    <h2>Services</h2>
-
-    <h3 style="margin-top:20px;">Web Development</h3>
-    <ul>
-      <li>Full Stack Web Application Development</li>
-      <li>MERN Stack Development (MongoDB, Express, React, Node.js)</li>
-      <li>PHP & Laravel Based Web Applications</li>
-      <li>Custom Admin Panels & Dashboards</li>
-      <li>API Development & Third-Party Integrations</li>
-    </ul>
-
-    <h3 style="margin-top:20px;">E-Commerce Development</h3>
-    <ul>
-      <li>WordPress & WooCommerce Stores</li>
-      <li>Shopify Store Setup & Customization</li>
-      <li>Wix & Magento Based E-Commerce Solutions</li>
-      <li>GoHighLevel CRM Setup & Automation</li>
-      <li>Zapier & Zoho Integrations</li>
-      <li>Payment Gateway & Order Automation</li>
-    </ul>
-
-    <h3 style="margin-top:20px;">Mobile App Development</h3>
-    <ul>
-      <li>Cross-Platform App Development (Flutter)</li>
-      <li>Android App Development (Java, Kotlin)</li>
-      <li>iOS App Development (Swift)</li>
-      <li>API-Driven Mobile Applications</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Live Products & Platforms</h2>
-    <p>I actively run and maintain production platforms used by real clients:</p>
-
-    <ul>
-      <li>
-        <strong>WHMCS Modules</strong> – Custom WHMCS addons and integrations<br>
-        <a href="https://whmcsmodules.org" target="_blank">https://whmcsmodules.org</a>
-      </li>
-      <li style="margin-top:10px;">
-        <strong>WHMCS Xperts</strong> – Professional WHMCS development services<br>
-        <a href="https://whmcsxperts.com" target="_blank">https://whmcsxperts.com</a>
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Freelance Profiles</h2>
-    <ul>
-      <li>
-        <strong>Fiverr (Level 2 Seller)</strong><br>
-        <a href="https://www.fiverr.com/prabhdeepsin956" target="_blank">
-          https://www.fiverr.com/prabhdeepsin956
-        </a>
-      </li>
-      <li style="margin-top:10px;">
-        <strong>Upwork Freelancer</strong><br>
-        <a href="https://www.upwork.com/freelancers/~0188ce9382dbee4311" target="_blank">
-          View Upwork Profile
-        </a>
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects & Client Reviews</h2>
-    <p>
-      Client satisfaction is my top priority. Below are real reviews and ratings
-      from completed projects.
-    </p>
-
-    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
-      <img src="images/fiverr_rating.png" alt="Fiverr Rating"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_gigs.png" alt="Fiverr Gig 1"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_review1.png" alt="Fiverr Review 1"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_review2.png" alt="Fiverr Review 2"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_review3.png" alt="Fiverr Review 3"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_review4.png" alt="Fiverr Review 4"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-      <img src="images/fiverr_review5.png" alt="Fiverr Review 5"
-        style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 8px;" />
-    </div>
-
-    <p style="margin-top: 20px;">Want to see more? <a href="http://fiverr.com/prabhdeepsin956" target="_blank">Visit my
-        full Fiverr profile</a>.</p>
-  </section>
-
-  <section class="contact">
-    <h2>Let’s Work Together</h2>
-    <p>
-      Have a project in mind or need a reliable developer for long-term work?
-      Feel free to reach out.
-    </p>
-
-    <a href="mailto:prabhdeep.developer@gmail.com">📧 prabhdeep.developer@gmail.com</a>
-    <a href="https://t.me/prabhdeepsin956" target="_blank">📨 Telegram: @prabhdeepsin956</a>
-  </section>
+    <section>
+      <h2>Contact</h2>
+      <p>For project enquiries or technical service requests, contact:</p>
+      <div class="contact">
+        <a href="mailto:prabhdeep.developer@gmail.com">prabhdeep.developer@gmail.com</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2026 Prabhdeep Singh<br>
-    Full-Stack Developer • WHMCS Specialist • Freelance Consultant
+    <p><strong>PTECH SOLUTIONS</strong></p>
+    <p>Operated by Prabhdeep Singh · Sole Proprietorship</p>
+    <p>Web Development & Technical Services</p>
+    <p>© 2026 PTECH SOLUTIONS. All rights reserved.</p>
   </footer>
-
 </body>
-
 </html>
